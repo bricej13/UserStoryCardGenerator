@@ -1,6 +1,11 @@
 # User Story Card Generator
 This PowerShell script will run a Query from TFS and spit out the results into HTML cards that can be printed and used to track progress.
 
+
+## Screenshot
+![capture](https://cloud.githubusercontent.com/assets/1159009/7520887/acee9bfc-f4af-11e4-84de-54a6626a4f1a.PNG)
+
+
 ## Installation
 1. Install [Team Foundation Power Tools](http://www.microsoft.com/en-us/download/details.aspx?id=35775)
 2. Change settings in file (I use PowerShell ISE)
