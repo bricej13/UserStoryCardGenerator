@@ -1,26 +1,6 @@
-﻿#########################################
-# Brice's fancy TFS queryer
-# Version 2.1
-# Purpose: Pulls data from TFS and creates an HTML file that will print nicely (from Firefox or Chrome)
-# Instructions: 
-# 1. Install Team Foundation Power Tools (http://www.microsoft.com/en-us/download/details.aspx?id=35775)
-# 2. Change settings
-#   - $usid       is a single user story id. Set this variable if you only want the tasks from a single user story.
-#   - $stretchstackrank  is the threshold above which user stories will be considered 'stretch'. They print with a slightly different format for easy differentiation.
-#   - $query      is the path in TFS for the query you want to run. Note that it includes the project name, the folder structure, and the name of the query
-#   - $collection is collection URI. This can be seen in the Team->Connect to Team Foundation Server window
-# 3. Run the script!
-# 5. Clean up
-#   - Go through the new document and reduce the font size for really long transitions
-#   
-# 
-#########################################
-
-
-# Settings
-
+﻿# Settings
 ## $usid: User Story Id. If this id is not 0, we will only get the cards for that user story.
-$usid = 0# @(19029) # syntax for multiple stories: @(16329, 12345)
+$usid = 0  # syntax for multiple stories: @(16329, 12345)
 
 ## $stretchstackrank: Stackrank where stretch stories begin. Above this stackrank the cards will print out lighter to distinguish them. Set to 0 to ignore
 $stretchstackrank = 999
@@ -243,15 +223,3 @@ invoke-item $HTMLSaveLocation
 # Get rid of TFS connection
 $tfs.Dispose();
 Clear-Variable tfs
-
-
-# Version History
-## 2.2
-# - Changed sorting on tasks for easier cutting. Now one task per story will be on each page. This should help sorting when using a paper cutter
-## 2.1
-# - A limit can be now set to differentiate stretch stories. They will print with a lighter-colored header for easy differentiation
-#
-## 2.0
-# - Changed out to HTML directly
-# - Fixed bug that caused issues if script was exited prematurely
-# - Added functionality to print a single user story
